@@ -1,0 +1,43 @@
+.admin-panel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("https://th.bing.com/th/id/OIP.aGvzr-xiM12MDDGfM_GwuwAAAA?rs=1&pid=ImgDetMain"); 
+    background-size: cover;
+    background-position: center;
+}
+
+.admin-panel-box {
+    background-color: #060001; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 500px; 
+    text-align: center; 
+}
+
+.admin-panel-box h1 {
+    color: #ccc; 
+    margin-bottom: 20px;
+}
+
+.admin-panel-buttons {
+    display: flex; 
+    justify-content: center; 
+}
+
+.logout-button {
+    background-color: #519aed; 
+    color: white;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+}
+
+.logout-button:hover {
+    background-color: #0056b3; 
+}

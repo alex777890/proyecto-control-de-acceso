@@ -1,0 +1,307 @@
+/* Estilos generales */
+.admin-panel {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f4f8; /* Azul claro como fondo general */
+    font-family: 'Arial', sans-serif;
+}
+
+.toggle-sidebar {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.toggle-sidebar:hover {
+    background-color: #e9ecef;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #ffffff; /* Blanco para la barra lateral */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.closed {
+    transform: translateX(-100%); /* Ocultar completamente la barra */
+    box-shadow: none; /* Eliminar sombra al colapsar */
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    color: #2c3e50; /* Azul oscuro para el título */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 15px;
+}
+
+.sidebar-menu button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    color: #2c3e50;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-menu button.active,
+.sidebar-menu button:hover {
+    background-color: #3498db; /* Azul atractivo */
+    color: white;
+}
+
+.sidebar-menu button i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.logout-button {
+    background-color: #e74c3c; /* Rojo atractivo */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+.main-content {
+    margin-left: 250px;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+    background-color: #ecf0f1; /* Gris claro para el contenido */
+}
+
+.main-content.sidebar-closed {
+    margin-left: 0;
+}
+
+.content-header {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-header h1 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.content-body {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-sections {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Formulario ocupa 1/3, tabla 2/3 */
+    gap: 20px;
+    align-items: start;
+}
+
+.form-column, .table-column {
+    width: 100%;
+}
+
+.form-section {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e; /* Azul oscuro para labels */
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d2d6de; /* Gris claro para bordes */
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3498db; /* Azul atractivo para el foco */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.form-actions {
+    margin-top: 15px;
+}
+
+.btn-submit {
+    background-color: #e74c3c; /* Rojo atractivo para "Agregar" */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #c0392b;
+}
+
+.btn-cancel {
+    background-color: #e67e22; /* Naranja atractivo para "Cancelar" */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-cancel:hover {
+    background-color: #d35400;
+}
+
+.btn-action {
+    background-color: #2ecc71; /* Verde atractivo para acciones */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-action:hover {
+    background-color: #27ae60;
+}
+
+/* Estilo para la sección de Excel */
+.excel-import-section {
+    margin-bottom: 20px;
+    border: 1px solid #d2d6de;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.excel-import-section .form-group label {
+    margin-right: 10px;
+}
+
+.excel-import-section p {
+    font-size: 0.9em;
+    color: #34495e;
+    margin-top: 10px;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+}
+
+.users-table th,
+.users-table td {
+    border: 1px solid #d2d6de;
+    padding: 8px;
+    text-align: left;
+    background-color: #ffffff;
+}
+
+.users-table th {
+    background-color: #e8f4f8; /* Azul muy claro para headers */
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+    .toggle-sidebar {
+        display: block;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        height: 100%;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .main-content.sidebar-closed {
+        margin-left: 0;
+    }
+
+    .content-sections {
+        grid-template-columns: 1fr; /* Apilar columnas en pantallas pequeñas */
+        gap: 10px;
+    }
+
+    .form-column, .table-column {
+        width: 100%;
+    }
+}
